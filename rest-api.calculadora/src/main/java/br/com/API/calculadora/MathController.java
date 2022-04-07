@@ -10,15 +10,52 @@ import br.com.API.calculadora.exception.UnsuportedMathOperationExeception;
 @RestController
 public class MathController {
 
-	// Endpoint
+	// Endpoint -> sum
 	@RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
 	public Double sum(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
 			throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsuportedMathOperationExeception("Please set a numeric value");
 		}
+		
 		Double sum = convertToDouble(numberOne) + convertToDouble(numberTwo);
 		return sum;
+	}
+	
+	//subtraction
+	@RequestMapping(value = "/sub/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+	public Double sub(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
+			throws Exception {
+		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+			throw new UnsuportedMathOperationExeception("Please set a numeric value");
+		}
+		
+		Double sub = convertToDouble(numberOne) - convertToDouble(numberTwo);
+		return sub;
+	}
+	
+	//multiplication
+	@RequestMapping(value = "/mult/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+	public Double mult(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
+			throws Exception {
+		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+			throw new UnsuportedMathOperationExeception("Please set a numeric value");
+		}
+		
+		Double mult = convertToDouble(numberOne) * convertToDouble(numberTwo);
+		return mult;
+	}
+	
+	//division
+	@RequestMapping(value = "/div/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+	public Double div(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
+			throws Exception {
+		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+			throw new UnsuportedMathOperationExeception("Please set a numeric value");
+		}
+		
+		Double div = convertToDouble(numberOne) / convertToDouble(numberTwo);
+		return div;
 	}
 
 	private Double convertToDouble(String strNumber) {
