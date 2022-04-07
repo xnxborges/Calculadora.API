@@ -17,7 +17,7 @@ Eclipse
 IntelliJ 
 
 Inicie a aplicação com a função 'RUN' da IDE e aguarde o SpringBoot iniciar todos os recursos.
-Abra uma nova janela no seu browser a URL de exemplo: http://localhost:8080/sum/10/9
+Abra uma nova janela no seu browser a URL de exemplo: http://localhost:8080/sum/10/9  
 Você pode fazer operações matemáticas diretamento no browser completando o endpoint com o nome da operação que deseja fazer  
 sum = soma  
 sub = subtração  
